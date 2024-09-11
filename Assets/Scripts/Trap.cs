@@ -9,7 +9,8 @@ public class Trap : MonoBehaviour
     {
         if(other.transform.name == "Bola")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            var canvasGame = FindObjectOfType<CanvasGameMng>();
+            canvasGame.GameOver();         
         }
     }
 }
