@@ -5,3 +5,5 @@ Aula 5
 - Configurar a cena 1 para ser apenas moedas
 - Criar a cena da fase 2 com uma armadilha
 - Criar a cena da fase 3 com uma armadilha que se move de um ponto ao outro
+- Criar cena menu
+- Gerar luz dos níveis
