@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4260769545581627468}
   - component: {fileID: 2087227053662293853}
   - component: {fileID: 7704230394983934400}
+  - component: {fileID: 990950011141009546}
   m_Layer: 0
   m_Name: Moeda
   m_TagString: Untagged
@@ -118,3 +119,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70b3ece560b7cd439bb4f3eca3d2371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &990950011141009546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063808375742738710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8790e83312d8fb342b0496bc4c0c9e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationEnable: {x: 0, y: 1, z: 0}
+  speed: 300
