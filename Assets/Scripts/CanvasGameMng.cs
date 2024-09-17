@@ -23,6 +23,8 @@ public class CanvasGameMng : MonoBehaviour
     public Text txtResult1;
     public Text txtResult2;
 
+    public int keyItem = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,5 +75,15 @@ public class CanvasGameMng : MonoBehaviour
         scoreFinal = timerNow * score;
         txtResult2.text = $"{scoreFinal}pts";
         pnlEndLevel.SetActive(true);
+    }
+
+    public void IncrementKey()
+    {
+        keyItem++;
+    }
+
+    public void UseKeyItem()
+    {
+        keyItem--;
     }
 }
