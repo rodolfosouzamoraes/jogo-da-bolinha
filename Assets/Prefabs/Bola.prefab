@@ -146,3 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d378ea4ff623d408e0e08eb9501e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materialNormal: {fileID: 2100000, guid: 2a807d14ee2503046844111c1d7b0d4f, type: 2}
+  materialFreeze: {fileID: 2100000, guid: 0598314fa19297243a7b3c99fbc3a3b0, type: 2}
+  gravity: -5
