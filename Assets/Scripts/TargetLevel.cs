@@ -15,7 +15,7 @@ public class TargetLevel : MonoBehaviour
     {
         if(other.transform.name == "Bola")
         {
-            canvasGameMng.IncrementScore(300);
+            canvasGameMng.IncrementScore(canvasGameMng.targetLevelPoints);
             canvasGameMng.EndLevel();
             Destroy(gameObject);
         }

@@ -23,7 +23,7 @@ public class Coin : MonoBehaviour
     {
         if (other.transform.name == "Bola")
         {
-            canvasGameMng.IncrementScore(50);
+            canvasGameMng.IncrementScore(canvasGameMng.coinPoints);
             Destroy(gameObject);
         }
     }
