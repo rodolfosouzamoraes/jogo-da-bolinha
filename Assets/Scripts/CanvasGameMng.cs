@@ -25,12 +25,30 @@ public class CanvasGameMng : MonoBehaviour
 
     public int keyItem = 0;
 
+    public int coinPoints;
+    public int targetLevelPoints;
+
+    private int scoreTotalLevel = 0;
+    private float percentualScore = 0;
+
+    public GameObject starOn1;
+    public GameObject starOn2;
+    public GameObject starOn3;
+
+
     // Start is called before the first frame update
     void Start()
     {
         txtScore.text = "" + score;
         ball = FindObjectOfType<Ball>().gameObject;
         startTime = Time.time;
+
+        scoreTotalLevel = FindObjectsOfType<Coin>().Length * coinPoints + targetLevelPoints;
+    
+        starOn1.SetActive(false);
+        starOn2.SetActive(false);
+        starOn3.SetActive(false);
+
     }
 
     private void Update()
@@ -72,6 +90,8 @@ public class CanvasGameMng : MonoBehaviour
     {
         isDisableInteraction = true;
         txtResult1.text = $"{timerNow} x {score}";
+        percentualScore = (score / scoreTotalLevel) * 100;
+        CalculateStars();
         scoreFinal = timerNow * score;
         txtResult2.text = $"{scoreFinal}pts";
         pnlEndLevel.SetActive(true);
@@ -85,5 +105,24 @@ public class CanvasGameMng : MonoBehaviour
     public void UseKeyItem()
     {
         keyItem--;
+    }
+
+    public void CalculateStars()
+    {
+        if(percentualScore >= 20 && percentualScore < 50)
+        {
+            starOn1.SetActive(true);
+        }
+        else if (percentualScore >= 50 && percentualScore < 90)
+        {
+            starOn1.SetActive(true);
+            starOn2.SetActive(true);
+        }
+        else if(percentualScore >= 90)
+        {
+            starOn1.SetActive(true);
+            starOn2.SetActive(true);
+            starOn3.SetActive(true);
+        }
     }
 }
