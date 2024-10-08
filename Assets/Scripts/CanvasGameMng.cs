@@ -35,6 +35,8 @@ public class CanvasGameMng : MonoBehaviour
     public GameObject starOn2;
     public GameObject starOn3;
 
+    private int idLevel;
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +51,7 @@ public class CanvasGameMng : MonoBehaviour
         starOn2.SetActive(false);
         starOn3.SetActive(false);
 
+        idLevel = SceneManager.GetActiveScene().buildIndex;
     }
 
     private void Update()
@@ -91,6 +94,7 @@ public class CanvasGameMng : MonoBehaviour
         isDisableInteraction = true;
         txtResult1.text = $"{timerNow} x {score}";
         percentualScore = (score / scoreTotalLevel) * 100;
+        DBMng.SaveLevel(idLevel,percentualScore);
         CalculateStars();
         scoreFinal = timerNow * score;
         txtResult2.text = $"{scoreFinal}pts";
