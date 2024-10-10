@@ -37,6 +37,8 @@ public class CanvasGameMng : MonoBehaviour
 
     private int idLevel;
 
+    public GameObject vfxExplosionBall;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +76,8 @@ public class CanvasGameMng : MonoBehaviour
     public void GameOver()
     {
         isDisableInteraction = true;
+        GameObject vfxInstantiate = Instantiate(vfxExplosionBall);
+        vfxInstantiate.transform.position = ball.transform.position;
         Destroy(ball);
         Invoke("ReloadScene", 2.5f);
     }

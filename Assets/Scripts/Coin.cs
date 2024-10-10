@@ -6,6 +6,8 @@ public class Coin : MonoBehaviour
 {
     private float y = 0;
     private CanvasGameMng canvasGameMng;
+
+    public GameObject vfx;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,8 @@ public class Coin : MonoBehaviour
         if (other.transform.name == "Bola")
         {
             canvasGameMng.IncrementScore(canvasGameMng.coinPoints);
+            GameObject vfxInstantiate = Instantiate(vfx);
+            vfxInstantiate.transform.position = transform.position;
             Destroy(gameObject);
         }
     }
