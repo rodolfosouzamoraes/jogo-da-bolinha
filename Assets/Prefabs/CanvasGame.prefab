@@ -844,6 +844,7 @@ MonoBehaviour:
   starOn1: {fileID: 5261640632417465331}
   starOn2: {fileID: 2642259565542492217}
   starOn3: {fileID: 3518549635019979069}
+  vfxExplosionBall: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
 --- !u!1 &4654406882076209460
 GameObject:
   m_ObjectHideFlags: 0

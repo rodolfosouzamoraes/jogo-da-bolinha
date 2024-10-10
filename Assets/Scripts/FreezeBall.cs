@@ -7,6 +7,7 @@ public class FreezeBall : MonoBehaviour
     public Transform transformRotateX;
     private bool isFreeze = false;
     private Ball ball;
+    public GameObject vfx;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,8 @@ public class FreezeBall : MonoBehaviour
         if(other.gameObject.name == "Bola" && isFreeze == false)
         {
             isFreeze = true;
+            GameObject vfxInstantiate = Instantiate(vfx);
+            vfxInstantiate.transform.position = ball.transform.position;
             ball.DisableGravity();
             ball.transform.SetParent(transformRotateX);
             Invoke("FreeFreeze", 3);
