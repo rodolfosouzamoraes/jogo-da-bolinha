@@ -9,6 +9,7 @@ public class GateWithKey : MonoBehaviour
     private CanvasGameMng canvasGameMng;
     private bool isUnlocked = false;
     private bool isOpenGate = false;
+    public GameObject keyHole;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class GateWithKey : MonoBehaviour
             if(canvasGameMng.keyItem != 0)
             {
                 canvasGameMng.UseKeyItem();
+                keyHole.SetActive(false);
                 isUnlocked = true;
             }
         }
