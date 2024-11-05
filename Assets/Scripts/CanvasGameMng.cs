@@ -74,6 +74,7 @@ public class CanvasGameMng : MonoBehaviour
 
     public void GameOver()
     {
+        AudioMng.Instance.PlayAudioExplosion();
         isDisableInteraction = true;
         GameObject vfxInstantiate = Instantiate(vfxExplosionBall);
         vfxInstantiate.transform.position = ball.transform.position;
