@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -38,6 +39,11 @@ public class CanvasGameMng : MonoBehaviour
     private int idLevel;
     public GameObject vfxExplosionBall;
 
+    private int collectFootballBoot;
+    public GameObject[] imgFootballBoots;
+
+    public TextMeshProUGUI txtLevel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,10 +58,17 @@ public class CanvasGameMng : MonoBehaviour
         starOn3.SetActive(false);
 
         idLevel = SceneManager.GetActiveScene().buildIndex;
+
+        collectFootballBoot = 0;
+        txtLevel.text = $"Lv. {idLevel}";
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene(0);
+        }
+
         if (isDisableInteraction == true) return;
 
         timerNow = timerGame - (int)(Time.time - startTime);
@@ -130,5 +143,10 @@ public class CanvasGameMng : MonoBehaviour
             starOn2.SetActive(true);
             starOn3.SetActive(true);
         }
+    }
+
+    public void IncrementFootballBoot(){
+        collectFootballBoot++;
+        imgFootballBoots[collectFootballBoot-1].SetActive(true);
     }
 }
