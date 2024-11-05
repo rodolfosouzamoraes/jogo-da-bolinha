@@ -27,6 +27,7 @@ public class ActionButton : MonoBehaviour
 
         if(other.transform.name == "Bola")
         {
+            AudioMng.Instance.PlayAudioButton();
             meshButton.material = new Material(materialOn);
             var obj = objectInGame.GetComponent(scriptName) as MonoBehaviour;
             obj.enabled = true;

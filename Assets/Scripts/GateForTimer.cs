@@ -8,6 +8,7 @@ public class GateForTimer : MonoBehaviour
     private Vector3 initialPosition;
     public float movingSpeed;
     private WayForTimer wayForTimer;
+    private bool isOpenGate = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +21,14 @@ public class GateForTimer : MonoBehaviour
     {
         if (wayForTimer.IsTiming == true) {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, openPosition, movingSpeed * Time.deltaTime);
+            isOpenGate = true;
         }
         else
         {
+            if (isOpenGate == true) {
+                AudioMng.Instance.PlayAudioGate();
+                isOpenGate = false;
+            }
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, initialPosition, movingSpeed * Time.deltaTime);
         }
     }

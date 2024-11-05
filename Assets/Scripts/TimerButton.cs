@@ -33,6 +33,7 @@ public class TimerButton : MonoBehaviour
         if (wayForTimer.IsTiming == true) return;
         if(other.transform.name == "Bola")
         {
+            AudioMng.Instance.PlayAudioButton();
             wayForTimer.StartTiming();
         }
     }

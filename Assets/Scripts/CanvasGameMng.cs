@@ -52,6 +52,8 @@ public class CanvasGameMng : MonoBehaviour
         starOn3.SetActive(false);
 
         idLevel = SceneManager.GetActiveScene().buildIndex;
+
+        AudioMng.Instance.PlayAudioApito();
     }
 
     private void Update()
@@ -74,6 +76,7 @@ public class CanvasGameMng : MonoBehaviour
 
     public void GameOver()
     {
+        AudioMng.Instance.PlayAudioExplosion();
         isDisableInteraction = true;
         GameObject vfxInstantiate = Instantiate(vfxExplosionBall);
         vfxInstantiate.transform.position = ball.transform.position;

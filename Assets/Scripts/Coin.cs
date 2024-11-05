@@ -27,6 +27,7 @@ public class Coin : MonoBehaviour
             canvasGameMng.IncrementScore(canvasGameMng.coinPoints);
             GameObject vfxInstantiate = Instantiate(vfx);
             vfxInstantiate.transform.position = transform.position;
+            AudioMng.Instance.PlayAudioCoin();
             Destroy(gameObject);
         }
     }

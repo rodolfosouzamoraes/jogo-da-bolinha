@@ -35,6 +35,7 @@ public class GateWithKey : MonoBehaviour
         {
             if(canvasGameMng.keyItem != 0)
             {
+                AudioMng.Instance.PlayAudioUnlock();
                 canvasGameMng.UseKeyItem();
                 keyHole.SetActive(false);
                 isUnlocked = true;

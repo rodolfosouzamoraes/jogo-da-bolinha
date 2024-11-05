@@ -11,12 +11,14 @@ public class PortalMng : MonoBehaviour
 
     public void MoveToPortalOut(GameObject ball)
     {
+        AudioMng.Instance.PlayAudioPortal();
         isUsePortalOut = true;
         ball.transform.position = portalOut.transform.position + new Vector3(0,1,0);
     }
 
     public void MoveToPortalIn(GameObject ball)
     {
+        AudioMng.Instance.PlayAudioPortal();
         isUsePortalIn = true;
         ball.transform.position = portalIn.transform.position + new Vector3(0, 1, 0);
     }

@@ -17,6 +17,7 @@ public class TargetLevel : MonoBehaviour
         {
             canvasGameMng.IncrementScore(canvasGameMng.targetLevelPoints);
             canvasGameMng.EndLevel();
+            AudioMng.Instance.PlayAudioTrophy();
             Destroy(gameObject);
         }
     }

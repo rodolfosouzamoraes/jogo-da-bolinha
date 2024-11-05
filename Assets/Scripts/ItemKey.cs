@@ -21,6 +21,7 @@ public class ItemKey : MonoBehaviour
             canvasGameMng.IncrementScore(100);
             GameObject vfxInstantiate = Instantiate(vfx);
             vfxInstantiate.transform.position = transform.position;
+            AudioMng.Instance.PlayAudioKey();
             Destroy(gameObject);
         }
     }

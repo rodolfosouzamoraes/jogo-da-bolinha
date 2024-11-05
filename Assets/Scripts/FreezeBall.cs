@@ -18,6 +18,7 @@ public class FreezeBall : MonoBehaviour
     {
         if(other.gameObject.name == "Bola" && isFreeze == false)
         {
+            AudioMng.Instance.PlayAudioIce();
             isFreeze = true;
             GameObject vfxInstantiate = Instantiate(vfx);
             vfxInstantiate.transform.position = ball.transform.position;
