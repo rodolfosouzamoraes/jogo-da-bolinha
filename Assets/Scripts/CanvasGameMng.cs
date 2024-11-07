@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -38,6 +39,11 @@ public class CanvasGameMng : MonoBehaviour
     private int idLevel;
     public GameObject vfxExplosionBall;
 
+    private int collectFootbalBoot;
+    public GameObject[] imgsFootballBoot;
+
+    public TextMeshProUGUI txtLevel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +60,9 @@ public class CanvasGameMng : MonoBehaviour
         idLevel = SceneManager.GetActiveScene().buildIndex;
 
         AudioMng.Instance.PlayAudioApito();
+
+        collectFootbalBoot = 0;
+        txtLevel.text = $"Lv. {idLevel}";
     }
 
     private void Update()
@@ -133,5 +142,11 @@ public class CanvasGameMng : MonoBehaviour
             starOn2.SetActive(true);
             starOn3.SetActive(true);
         }
+    }
+
+    public void IncrementFootballBoot()
+    {
+        collectFootbalBoot++;
+        imgsFootballBoot[collectFootbalBoot-1].SetActive(true);
     }
 }

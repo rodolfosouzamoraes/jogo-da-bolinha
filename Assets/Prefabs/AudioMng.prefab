@@ -151,3 +151,4 @@ MonoBehaviour:
   audioPortal: {fileID: 8300000, guid: 4d00a0600042d4847b8f53c44d049b53, type: 3}
   audioIce: {fileID: 8300000, guid: 431bd0fdb5e14de4ea288c9644f03c23, type: 3}
   audioApito: {fileID: 8300000, guid: d595eedece92fd6429a15b6871e3b4e7, type: 3}
+  audioBoot: {fileID: 8300000, guid: b4900f36e44ecc5439ec23ef082e737d, type: 3}

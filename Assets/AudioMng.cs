@@ -27,6 +27,7 @@ public class AudioMng : MonoBehaviour
     public AudioClip audioPortal;
     public AudioClip audioIce;
     public AudioClip audioApito;
+    public AudioClip audioBoot;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,5 +80,10 @@ public class AudioMng : MonoBehaviour
     public void PlayAudioApito()
     {
         audioSource.PlayOneShot(audioApito);
+    }
+
+    public void PlayAudioBoot()
+    {
+        audioSource.PlayOneShot(audioBoot);
     }
 }
