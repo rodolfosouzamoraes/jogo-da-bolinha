@@ -5,20 +5,44 @@ using UnityEngine.SceneManagement;
 
 public class CanvasMenuMng : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject pnlMenu;
+    public GameObject pnlLevels;
+    public GameObject pnlSettings;
+    public GameObject pnlInformations;
+
+    private void Start()
     {
-        
+        AudioMng.Instance.PlayAudioMenu();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowPannelLevels()
     {
-        
+        pnlMenu.SetActive(false);
+        pnlLevels.SetActive(true);
     }
 
-    public void StartGame()
+    public void ShowPannelMenu()
     {
-        SceneManager.LoadScene(1);
+        pnlMenu.SetActive(true);
+        pnlLevels.SetActive(false);
+        pnlSettings.SetActive(false);
+        pnlInformations.SetActive(false);
+    }
+
+    public void ShowPannelSettings()
+    {
+        pnlMenu.SetActive(false);
+        pnlSettings.SetActive(true);
+    }
+
+    public void ShowPannelInformations()
+    {
+        pnlMenu.SetActive(false);
+        pnlInformations.SetActive(true);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

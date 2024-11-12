@@ -63,6 +63,8 @@ public class CanvasGameMng : MonoBehaviour
 
         collectFootbalBoot = 0;
         txtLevel.text = $"Lv. {idLevel}";
+
+        AudioMng.Instance.PlayAudioGame();
     }
 
     private void Update()
