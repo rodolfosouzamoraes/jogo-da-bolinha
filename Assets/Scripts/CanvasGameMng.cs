@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -43,6 +44,8 @@ public class CanvasGameMng : MonoBehaviour
     public GameObject[] imgsFootballBoot;
 
     public TextMeshProUGUI txtLevel;
+    public Image imgMedalBoot;
+    public Sprite[] sptMedalBoot;
 
     // Start is called before the first frame update
     void Start()
@@ -105,12 +108,18 @@ public class CanvasGameMng : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void EndLevel()
     {
         isDisableInteraction = true;
         txtResult1.text = $"{timerNow} x {score}";
         percentualScore = (score / scoreTotalLevel) * 100;
-        DBMng.SaveLevel(idLevel,percentualScore);
+        CalculateMedalBoot();
+        DBMng.SaveLevel(idLevel,percentualScore,collectFootbalBoot);
         CalculateStars();
         scoreFinal = timerNow * score;
         txtResult2.text = $"{scoreFinal}pts";
@@ -144,6 +153,11 @@ public class CanvasGameMng : MonoBehaviour
             starOn2.SetActive(true);
             starOn3.SetActive(true);
         }
+    }
+
+    public void CalculateMedalBoot()
+    {
+        imgMedalBoot.sprite = sptMedalBoot[collectFootbalBoot];
     }
 
     public void IncrementFootballBoot()

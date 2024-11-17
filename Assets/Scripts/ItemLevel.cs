@@ -21,6 +21,9 @@ public class ItemLevel : MonoBehaviour
     private float percentualScore;
     private int enableLevel;
 
+    public Image imgMedalBoot;
+    public Sprite[] sptsMedalBoot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +34,8 @@ public class ItemLevel : MonoBehaviour
         percentualScore = DBMng.GetScoreLevel(idLevel);
         CalculateStars();
 
-        txtLevelOff.text = idLevel.ToString();
+        imgMedalBoot.sprite = sptsMedalBoot[DBMng.GetMedalLevel(idLevel)];
+
         txtLevelOn.text = idLevel.ToString();
 
         enableLevel = DBMng.GetEnableLevel(idLevel);
