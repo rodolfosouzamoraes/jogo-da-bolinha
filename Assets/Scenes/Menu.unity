@@ -805,7 +805,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 321770202}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: ChangeVolumeMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &271004103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1148,8 @@ MonoBehaviour:
   pnlInformations: {fileID: 2022289519}
   pnlTutorial: {fileID: 942019724}
   pnlCredits: {fileID: 576819619}
+  sldVolumeVFX: {fileID: 1834998286}
+  sldVolumeMusic: {fileID: 223361081}
 --- !u!114 &321770203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4398,8 +4412,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -136}
-  m_SizeDelta: {x: 1720, y: 585}
+  m_AnchoredPosition: {x: 0, y: -101.75}
+  m_SizeDelta: {x: 1720, y: 653.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643589215
 MonoBehaviour:
@@ -4421,9 +4435,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Para jogar, utilize as setas do teclado para rotacionar o tabuleiro.\nVoc\xEA
-    deve equilibrar a bola que est\xE1 no tabuleiro at\xE9 que ela chegue no destino
-    final.\nColete moedas, chuteiras e o trof\xE9l em cada fase!\n\nBoa divers\xE3o!!!!"
+  m_text: "Para jogar, utilize as setas do teclado para rotacionar o tabuleiro. \nPara
+    voltar ao menu aperte a tecla ESC.\nVoc\xEA deve equilibrar a bola que est\xE1
+    no tabuleiro at\xE9 que ela chegue no destino final.\nColete moedas, chuteiras
+    e o trof\xE9l em cada fase!\n\nBoa divers\xE3o!!!!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2cd510bf95a8d1148ae2e2dad60466cf, type: 2}
   m_sharedMaterial: {fileID: 1381327748570760034, guid: 2cd510bf95a8d1148ae2e2dad60466cf, type: 2}
@@ -4450,8 +4465,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65
-  m_fontSizeBase: 65
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5382,7 +5397,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 321770202}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: ChangeVolumeVFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1836843597
 PrefabInstance:
   m_ObjectHideFlags: 0

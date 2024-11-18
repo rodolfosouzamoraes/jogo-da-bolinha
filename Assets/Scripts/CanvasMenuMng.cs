@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CanvasMenuMng : MonoBehaviour
 {
@@ -12,8 +13,15 @@ public class CanvasMenuMng : MonoBehaviour
     public GameObject pnlTutorial;
     public GameObject pnlCredits;
 
+    private Settings settings;
+
+    public Slider sldVolumeVFX;
+    public Slider sldVolumeMusic;
+
     private void Start()
     {
+        settings = DBMng.GetSettings();
+        AudioMng.Instance.SetVolume(settings.volumeMusic, settings.volumeVFX);
         AudioMng.Instance.PlayAudioMenu();
     }
 
@@ -37,6 +45,8 @@ public class CanvasMenuMng : MonoBehaviour
     public void ShowPannelSettings()
     {
         pnlMenu.SetActive(false);
+        sldVolumeVFX.value = settings.volumeVFX;
+        sldVolumeMusic.value = settings.volumeMusic;
         pnlSettings.SetActive(true);
     }
 
@@ -56,6 +66,19 @@ public class CanvasMenuMng : MonoBehaviour
     {
         pnlMenu.SetActive(false);
         pnlCredits.SetActive(true);
+    }
+
+    public void ChangeVolumeMusic()
+    {
+        DBMng.SaveSettings(sldVolumeMusic.value, settings.volumeVFX);
+        settings = DBMng.GetSettings();
+        AudioMng.Instance.SetVolume(settings.volumeMusic, settings.volumeVFX);
+    }
+    public void ChangeVolumeVFX()
+    {
+        DBMng.SaveSettings(settings.volumeMusic, sldVolumeVFX.value);
+        settings = DBMng.GetSettings();
+        AudioMng.Instance.SetVolume(settings.volumeMusic, settings.volumeVFX);
     }
 
     public void ExitGame()

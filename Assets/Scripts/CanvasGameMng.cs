@@ -72,6 +72,7 @@ public class CanvasGameMng : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape)) GoToMenu();
         if (isDisableInteraction == true) return;
 
         timerNow = timerGame - (int)(Time.time - startTime);

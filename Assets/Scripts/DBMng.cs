@@ -6,7 +6,8 @@ public static class DBMng
 {
     private const string SCORE_LEVEL = "score-level-";
     private const string ENABLE_LEVEL = "enable-level-";
-    private const string MEDAL_LEVEL = "medal_level";
+    private const string MEDAL_LEVEL = "medal_level-";
+    private const string SETTINGS = "settings";
 
     public static void SaveLevel(int id, float score, int medal)
     {
@@ -36,5 +37,25 @@ public static class DBMng
     public static int GetMedalLevel(int id)
     {
         return PlayerPrefs.GetInt(MEDAL_LEVEL + id);
+    }
+
+    public static void SaveSettings(float volumeMusic, float volumeVFX)
+    {
+        Settings settings = new Settings();
+        settings.volumeMusic = volumeMusic;
+        settings.volumeVFX = volumeVFX;
+        string json = JsonUtility.ToJson(settings);
+        PlayerPrefs.SetString(SETTINGS, json);
+    }
+
+    public static Settings GetSettings()
+    {
+        Settings settings = JsonUtility.FromJson<Settings>(PlayerPrefs.GetString(SETTINGS));
+        if (settings == null)
+        {
+            SaveSettings(1, 1);
+            settings = JsonUtility.FromJson<Settings>(PlayerPrefs.GetString(SETTINGS));
+        }
+        return settings;
     }
 }

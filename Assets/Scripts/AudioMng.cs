@@ -33,6 +33,12 @@ public class AudioMng : MonoBehaviour
     public AudioClip audioMenu;
     public AudioClip audioGame;
 
+    public void SetVolume(float volumeMusic, float volumeVFX)
+    {
+        audioSourceEffects.volume = volumeVFX;
+        audioSourceMusic.volume = volumeMusic;
+    }
+
     public void PlayAudioCoin()
     {
         audioSourceEffects.PlayOneShot(audioCoin);
