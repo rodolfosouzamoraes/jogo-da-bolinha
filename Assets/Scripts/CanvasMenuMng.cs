@@ -9,6 +9,8 @@ public class CanvasMenuMng : MonoBehaviour
     public GameObject pnlLevels;
     public GameObject pnlSettings;
     public GameObject pnlInformations;
+    public GameObject pnlTutorial;
+    public GameObject pnlCredits;
 
     private void Start()
     {
@@ -18,6 +20,7 @@ public class CanvasMenuMng : MonoBehaviour
     public void ShowPannelLevels()
     {
         pnlMenu.SetActive(false);
+        pnlTutorial.SetActive(false);
         pnlLevels.SetActive(true);
     }
 
@@ -27,6 +30,8 @@ public class CanvasMenuMng : MonoBehaviour
         pnlLevels.SetActive(false);
         pnlSettings.SetActive(false);
         pnlInformations.SetActive(false);
+        pnlCredits.SetActive(false);
+        pnlTutorial.SetActive(false);
     }
 
     public void ShowPannelSettings()
@@ -35,10 +40,22 @@ public class CanvasMenuMng : MonoBehaviour
         pnlSettings.SetActive(true);
     }
 
+    public void ShowPannelTutorial()
+    {
+        pnlLevels.SetActive(false);
+        pnlTutorial.SetActive(true);
+    }
+
     public void ShowPannelInformations()
     {
         pnlMenu.SetActive(false);
         pnlInformations.SetActive(true);
+    }
+
+    public void ShowPannelCredits()
+    {
+        pnlMenu.SetActive(false);
+        pnlCredits.SetActive(true);
     }
 
     public void ExitGame()
