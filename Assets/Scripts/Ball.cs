@@ -31,7 +31,7 @@ public class Ball : MonoBehaviour
         }
         else
         {
-            rigidbodyBall.velocity = new Vector3(rigidbodyBall.velocity.x,gravity,rigidbodyBall.velocity.z);
+            rigidbodyBall.linearVelocity = new Vector3(rigidbodyBall.linearVelocity.x,gravity,rigidbodyBall.linearVelocity.z);
         }
     }
 
